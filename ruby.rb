@@ -18,12 +18,24 @@ class Myclass
   end
 
   def start
+    p "--begin start--"
     @messanger.show_message
+    p "--end start--"
+  end
+
+  def begin_start
+     p "--begin start--"
+  end
+
+  def end_start
+    p "--end start--"
   end
 end
 
 @myclass = Myclass.new
+@myclass.begin_start
 @myclass.start
+@myclass.end_start
 
 
 #initializeメソッドで@messagerにインスタンスを入れたらstartでも使えるのか
