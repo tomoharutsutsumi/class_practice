@@ -1,20 +1,31 @@
 class Messanger
+
+  def set_message(words)
+    @words = words
+  end
+
   def show_message
-    puts 'this is test'
+    puts @words
+  end
+
+  def message
+    puts @words
   end
 end
 
-
+p "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR"
 
 @messanger = Messanger.new
+@messanger.set_message("これはテストです")
 @messanger.show_message
+@messanger.message
 
 
 p "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
 
 class Myclass
-  def initialize
-    @messanger = Messanger.new
+  def initialize(name)
+    @messanger = name #ここにある@messangerと上の@messangerは別物の理解
   end
 
   def start
@@ -36,15 +47,30 @@ private
   end
 end
 
-@myclass = Myclass.new
+
+p "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW"
+
+@myclass = Myclass.new(@messanger) #@messagerと@myclassはどのような関係にあるのか
 @myclass.start
 
+p "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"
 
-#initializeメソッドで@messagerにインスタンスを入れたらstartでも使えるのか
+puts @messanger.message
+@messanger.set_message("こんにちは")
 
-#def start
-#initialize
-#@messanger.show_message
-#end
+p "QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ"
 
-#rankメソッドの時みたいにはならないのか
+@myclass.start
+
+p "QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ"
+
+
+
+
+
+
+
+
+
+
+
