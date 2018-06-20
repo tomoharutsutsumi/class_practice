@@ -61,8 +61,45 @@ yourclass.double_call
 
 
 
+p"RTYRRRRRRRRRRRRRRRRRYYYYYYYYYY"
 
-#インスタンス変数はインスタンスが入っているからインスタンス変数なのではなく、class内の他のメソッドでも使えるという意味
+class Palette
+
+  attr_accessor :right_color
+  attr_accessor :left_color
+
+  def mazemaze(right, left)
+    case [right, left]
+    when ["red", "blue"], ["blue", "red"]
+      p :purple
+    when ["red", "yellow"], ["yellow", "red"]
+      p :orange
+    when ["blue", "yellow"], ["yellow", "blue"]
+      p :green
+      begin
+    else
+    #when right != "red" && "blue" && "yellow" || left != "red" && "blue" && "yellow"
+      rescue => e
+        puts e
+      #raise "未対応の色です:"
+    end
+    end
+  end
+
+end
+
+
+
+palette = Palette.new
+palette.right_color = "blu"
+palette.left_color = "yellow"
+
+palette.mazemaze(palette.right_color, palette.left_color)
+
+
+
+
+
 
 
 
