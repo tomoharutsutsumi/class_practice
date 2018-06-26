@@ -63,38 +63,135 @@ yourclass.double_call
 
 p"RTYRRRRRRRRRRRRRRRRRYYYYYYYYYY"
 
-class Palette
+#class Palette
 
+##  attr_accessor :left_color
+
+ ####   when ["red", "yellow"], ["yellow", "red"]
+  #    return p "orange"
+ #   when ["blue", "yellow"], ["yellow", "blue"]
+ #     return p "green"
+      #begin
+    #else
+    #when right != "red" && "blue" && "yellow" || left != "red" && "blue" && "yellow"
+      #rescue => e
+       # puts e
+      #raise "未対応の色です:"
+##    end
+ # end
+
+#
+
+
+#palette = Palette.new
+#palette.left_color = "red"
+
+#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Palette
   attr_accessor :right_color
   attr_accessor :left_color
 
-  def mazemaze(right, left)
-    case [right, left]
+
+
+  def mazemaze
+    case [self.right_color, @left_color ]
     when ["red", "blue"], ["blue", "red"]
-      p :purple
+       "purple"
     when ["red", "yellow"], ["yellow", "red"]
-      p :orange
+       "orange"
     when ["blue", "yellow"], ["yellow", "blue"]
-      p :green
-      begin
-    else
-    #when right != "red" && "blue" && "yellow" || left != "red" && "blue" && "yellow"
-      rescue => e
-        puts e
-      #raise "未対応の色です:"
+       "green"
     end
+  end
+
+  def mazemaze_int
+
+    if mazemaze == "purple"
+       1
+    elsif self.mazemaze == "orange"
+      2
+    else
+      3
     end
   end
 
 end
 
 
-
 palette = Palette.new
-palette.right_color = "blu"
-palette.left_color = "yellow"
+palette.right_color = "red"
+palette.left_color = "blue"
+p palette.mazemaze
 
-palette.mazemaze(palette.right_color, palette.left_color)
+
+p "UUUUUUUUUUUUUUU"
+
+palette.right_color = "yellow"
+p palette.mazemaze
+
+
+
+p "EEEEEEEEEEEEEEEEEEEEEEEEEEEE"
+
+p palette.mazemaze_int
+
+#######################
+#def right_color("red")
+ # @right_color = "red"
+#end
+
+#def right_color
+#  @right_color
+#end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
