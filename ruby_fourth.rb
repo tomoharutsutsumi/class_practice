@@ -8,11 +8,16 @@ class Connector
 
   def push(str)
     @connector.push(str)
-    #@connector.inspect
   end
 
   def connect
-    @connector.map { |str| str + @delim }
+    @connector.each_with_index do |connector, index|
+      if index == @connector.size - 1
+         print connector + "\n"
+      else
+         print connector + @delim
+      end
+    end
   end
 
 end
@@ -20,5 +25,6 @@ end
 connector = Connector.new
 connector.push("suzuki")
 connector.push("tanaka")
-p connector.push("yyyyyy")
-##p connector.connect
+connector.push("yyyyyy")
+connector.delim = ","
+connector.connect
