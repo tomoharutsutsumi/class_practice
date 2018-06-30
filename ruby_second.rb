@@ -165,7 +165,38 @@ p palette.mazemaze_int
 
 
 
+p "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR"
 
+class Palette
+  attr_accessor :right_color
+  attr_accessor :left_color
+
+
+  def mazemaze
+    array_right_color = ["red", "blue", "yellow"]
+    array_left_color = ["red", "blue", "yellow"]
+    case [@right_color, @left_color]
+    when ["red", "blue"], ["blue", "red"]
+       "purple"
+    when ["red", "yellow"], ["yellow", "red"]
+       "orange"
+    when ["blue", "yellow"], ["yellow", "blue"]
+       "green"
+    end
+       e = Exception.new("未対応の色です: #{@right_color}") if array_right_color.include?(@right_color) == false
+       e = Exception.new("未対応の色です: #{@left_color}") if array_left_color.include?(@left_color) == false
+  end
+
+
+end
+
+
+
+palete = Palette.new
+palette.left_color ="yellow"
+palette.right_color = "blu"
+
+palette.mazemaze
 
 
 
