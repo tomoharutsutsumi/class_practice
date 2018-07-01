@@ -185,6 +185,7 @@ class Palette
     end
        e = Exception.new("未対応の色です: #{@right_color}") if array_right_color.include?(@right_color) == false
        e = Exception.new("未対応の色です: #{@left_color}") if array_left_color.include?(@left_color) == false
+       raise e
   end
 
 
@@ -196,7 +197,7 @@ palete = Palette.new
 palette.left_color ="yellow"
 palette.right_color = "blu"
 
-palette.mazemaze
+ p palette.mazemaze
 
 
 
