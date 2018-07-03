@@ -92,10 +92,10 @@ class Connector
       else
         if index % 2 == 0
           last += connector
-          last += "#{@delim[0]}"
-        elsif index % 2 != 0
+          last += @delim[0]
+        else index % 2 != 0
           last += connector
-          last += "#{@delim[1]}"
+          last += @delim[1]
         end
       end
     end
@@ -184,10 +184,9 @@ class Connector
   end
 
   def random_connect
-    connector =  @connector.shuffle
+    shuffled_connector =  @connector.shuffle
     last = ""
-    connector.each_with_index do |connector, index|
-    index += 1
+    shuffled_connector.each.with_index(1) do |connector, index|
     last += index.to_s
     last += "."
       if index == @connector.size
@@ -208,20 +207,20 @@ class Connector
   def connect
     last = ""
     @connector.each_with_index do |connector, index|
-    index += 1
-    last += index.to_s
-    last += "."
-      if index == @connector.size
-        last += connector
-      else
-        if index % 2 != 0
+      index += 1
+      last += index.to_s
+      last += "."
+        if index == @connector.size
           last += connector
-          last += "#{@delim[0]}"
-        elsif index % 2 == 0
-          last += connector
-          last += "#{@delim[1]}"
+        else
+          if index % 2 != 0
+            last += connector
+            last += "#{@delim[0]}"
+          elsif index % 2 == 0
+            last += connector
+            last += "#{@delim[1]}"
+          end
         end
-      end
     end
     last
   end
