@@ -244,5 +244,30 @@ connector.delim.push(";")
 
 
 
+p "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+
+class Myclass
+
+  def insert(item)
+    @hoge = item
+    self
+  end
+
+  def show
+    puts @hoge
+  end
+
+  def showshow
+    self.show
+  end
+
+end
+
+
+myclass = Myclass.new
+myclass.insert("ttm")
+myclass.showshow
+
+
 
 

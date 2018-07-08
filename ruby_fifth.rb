@@ -13,11 +13,11 @@ class Connector
 
   def random_connect 
     shuffled_connector =  @connector.shuffle
-    common_connect(shuffled_connector)
+    self.common_connect(shuffled_connector)
   end
 
   def connect
-    common_connect(@connector)
+    self.common_connect(@connector)
   end
 
   def common_connect(connectors)
