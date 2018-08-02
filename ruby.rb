@@ -15,10 +15,10 @@ end
 
 p "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR"
 
-@messanger = Messanger.new
-@messanger.set_message("これはテストです")
-@messanger.show_message
-@messanger.message
+messanger = Messanger.new
+messanger.set_message("これはテストです")
+messanger.show_message
+messanger.message
 
 
 p "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
