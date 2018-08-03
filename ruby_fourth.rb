@@ -244,5 +244,31 @@ connector.delim.push(";")
 
 
 
+p "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+
+class Myclass
+
+  def insert(item)
+    @hoge = item
+  end
+
+  def add
+    @added_hoge = "私の名前は#{@hoge}です。"
+    self
+  end
+
+  def show
+   puts @added_hoge
+  end
+
+end
+
+
+myclass = Myclass.new
+myclass.insert("ttm")
+myclass.add.show
+
+
+
 
 
