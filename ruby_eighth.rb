@@ -2,19 +2,19 @@
 class Tokenizer
 
   def initialize(strs)
-    @items = strs
-    @items += ","
+    @strs = strs
+    @strs += ","
   end
 
   def tokenize
      one_chara_items = []
      stocked_items = []
-     @items.each_char do |item|
-      if item == ","
+     @strs.each_char do |ch|
+      if ch == ","
         stocked_items.push(one_chara_items.join)
         one_chara_items = []
       else
-        one_chara_items.push(item)
+        one_chara_items.push(ch)
       end
      end
      @stocked_items = stocked_items
